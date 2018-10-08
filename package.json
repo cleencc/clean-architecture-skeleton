@@ -5,7 +5,7 @@
   "author": "Chris <chris@cleen.cc>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js --exec babel-node",
+    "dev": "nodemon src/server.js --exec babel-node",
     "test:unit": "jest -c jest.unit.config.js",
     "test:unit:coverage": "jest --coverage -c jest.unit.config.js",
     "test:integration": "jest -c jest.integration.config.js"
@@ -20,6 +20,10 @@
     "supertest": "^3.3.0"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "knex": "^0.15.2",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   }
 }
