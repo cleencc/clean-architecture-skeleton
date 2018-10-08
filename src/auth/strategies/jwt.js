@@ -10,11 +10,5 @@ opts.audience = 'example.com';
 export { opts };
 
 export default new JwtStrategy(opts, function(jwt_payload, done) {
-    const id = jwt_payload.sub;
-
-    if (id != 1) {
-        return done(err, false);
-    }
-
-    return done(null, { id: id });
+    return done(null, { id: 1 });
 });

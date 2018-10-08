@@ -3,12 +3,10 @@ import passport from 'passport';
 import strategy from './auth/strategies/jwt';
 import personas from './routes/personas';
 
+passport.use('jwt', strategy);
+
 const app = express();
 
-passport.use(strategy);
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use('/api/v1/personas', personas);
+app.use('/api/v1/personas', passport.authenticate('jwt'), personas);
 
 export default app;
