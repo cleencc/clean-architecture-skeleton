@@ -7,8 +7,9 @@ export default class CreatePersona {
 
     fromName(name) {
         try {
-            const personaName = new PersonaName(name);
-            const persona = this.personas.createFromName(String(personaName));
+            const persona = this.personas.createFromName(
+                String(new PersonaName(name))
+            );
 
             return {
                 created: true,
