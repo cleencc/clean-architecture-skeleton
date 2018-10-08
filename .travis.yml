@@ -3,3 +3,12 @@ node_js:
   - "8"
 sudo: required
 dist: trusty
+env:
+  global:
+    - CC_TEST_REPORTER_ID=12b1f49e5d00f27ed0cda231a498167605d33a46eaef8b28557b8eba86fddf23
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
