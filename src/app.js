@@ -6,6 +6,8 @@ import personas from './routes/personas';
 const app = express();
 
 passport.use(strategy);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/api/v1/personas', personas);
 
