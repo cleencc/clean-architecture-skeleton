@@ -5,12 +5,16 @@
   "author": "Chris <chris@cleen.cc>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
